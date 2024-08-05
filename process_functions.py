@@ -161,4 +161,4 @@ def rank_genes(data=None, names=None, mark_l=None):
     
     out_name = np.asarray(out_l)
     out_ranks = np.asarray(data_l)
-    return(out_name, out_ranks)
+    return({'names':out_name, 'ranks':out_ranks})
