@@ -1,0 +1,6 @@
+Gene_set	Term	Overlap	P-value	Adjusted P-value	Old P-value	Old Adjusted P-value	Odds Ratio	Combined Score	Genes
+GO_Cellular_Component_2021	microbody lumen (GO:0031907)	1/49	7.332288e-03	1.833072e-02	0	0	2.078021e+02	1.021444e+03	DDO
+GO_Cellular_Component_2021	peroxisomal matrix (GO:0005782)	1/49	7.332288e-03	1.833072e-02	0	0	2.078021e+02	1.021444e+03	DDO
+GO_Cellular_Component_2021	peroxisome (GO:0005777)	1/128	1.907818e-02	3.179697e-02	0	0	7.822835e+01	3.097224e+02	DDO
+GO_Cellular_Component_2021	nucleus (GO:0005634)	1/4484	5.330924e-01	5.941393e-01	0	0	1.730315e+00	1.088473e+00	WWTR1
+GO_Cellular_Component_2021	intracellular membrane-bounded organelle (GO:0043231)	1/5192	5.941393e-01	5.941393e-01	0	0	1.426122e+00	7.424983e-01	WWTR1
