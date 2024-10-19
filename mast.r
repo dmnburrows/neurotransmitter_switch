@@ -35,7 +35,7 @@ options(mc.cores=10)
 print('running')
 
 # Set working directory
-setwd("/cndd3/dburrows/DATA/neurotransmitter_switch/analysis/mast/")
+setwd("/cndd3/dburrows/DATA/neurotransmitter_switch/analysis/mast_coarse/")
 
 # Get list of all cpm_ files
 cpm_files <- list.files(pattern = "^cpm_.*\\.csv$")
@@ -71,20 +71,20 @@ for (cpm_file in cpm_files) {
     filtered <- filterLowExpressedGenes(mast, threshold = 0.1)
     
     # Run the MAST model with a random intercept for sample
-    # zlmint <- zlm(~condition + (1|Sample), sca = filtered, method = 'glmer', ebayes = FALSE, strictConvergence = FALSE, fitArgsD = list(nAGQ = 0))
+    zlmint <- zlm(~condition + (1|Sample), sca = filtered, method = 'glmer', ebayes = FALSE, strictConvergence = FALSE, fitArgsD = list(nAGQ = 0))
 
     # Run the MAST model with a random intercept and random slope for Sample
-    zlmint <- zlm(~condition + (condition | Sample), 
-                  sca = filtered, 
-                  method = 'glmer', 
-                  ebayes = FALSE, 
-                  strictConvergence = FALSE, 
-                  fitArgsD = list(nAGQ = 0))
+    # zlmint <- zlm(~condition + (condition | Sample), 
+    #               sca = filtered, 
+    #               method = 'glmer', 
+    #               ebayes = FALSE, 
+    #               strictConvergence = FALSE, 
+    #               fitArgsD = list(nAGQ = 0))
 
     sum_zlmint <- summary(zlmint, logFC = TRUE, doLRT = 'conditionSal') 
     
     # Save the output uniquely based on the base_name
-    output_file <- paste0("MAST-LRT_", base_name, "_sample-intercept-slope.csv")
+    output_file <- paste0("MAST-LRT_", base_name, "_sample-intercept.csv")
     write.csv(sum_zlmint$datatable, file = output_file)
     
     print(paste("Completed processing for", cpm_file))
