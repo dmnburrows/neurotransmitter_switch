@@ -1,7 +1,7 @@
 library(DESeq2)
 library(tidyverse)
 
-setwd("/cndd3/dburrows/DATA/neurotransmitter_switch/analysis/deseq/")
+setwd("/cndd3/dburrows/DATA/neurotransmitter_switch/analysis/deseq_coarse_cocaine/")
 
 # Get list of all files that start with 'cnts'
 cnts_files <- list.files(pattern = "^cnts.*\\.csv$")
